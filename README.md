@@ -7,5 +7,6 @@ https://www.youtube.com/watch?v=UlQRXJWUNBA - video explaining the code
 https://awesome-python.com/ - use this to find modules to add to my projects
 https://tkdocs.com/tutorial/index.html - tkinter docs
 
+pip install pywin32
 
 started on 29/04/2021
