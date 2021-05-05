@@ -220,53 +220,6 @@ def select_all(e):
 def clear_all():
 	my_text.delete(1.0, END)
 
-# Turn on Night Mode
-def night_on():
-	main_color = "#000000"
-	second_color = "#373737"
-	text_color = "green"
-
-	root.config(bg=main_color)
-	status_bar.config(bg=main_color, fg=text_color)
-	my_text.config(bg=second_color)
-	toolbar_frame.config(bg=main_color)
-	# toolbar buttons
-	bold_button.config(bg=second_color)
-	italics_button.config(bg=second_color)
-	redo_button.config(bg=second_color)
-	undo_button.config(bg=second_color)
-	color_text_button.config(bg=second_color)
-	# file menu colors
-	file_menu.config(bg=main_color, fg=text_color)
-	edit_menu.config(bg=main_color, fg=text_color)
-	color_menu.config(bg=main_color, fg=text_color)
-	options_menu.config(bg=main_color, fg=text_color)
-
-
-# Turn Off Night Mode:
-def night_off():
-	main_color = "SystemButtonFace"
-	second_color = "SystemButtonFace"
-	text_color = "black"
-
-	root.config(bg=main_color)
-	status_bar.config(bg=main_color, fg=text_color)
-	my_text.config(bg="white")
-	toolbar_frame.config(bg=main_color)
-	# toolbar buttons
-	bold_button.config(bg=second_color)
-	italics_button.config(bg=second_color)
-	redo_button.config(bg=second_color)
-	undo_button.config(bg=second_color)
-	color_text_button.config(bg=second_color)
-	# file menu colors
-	file_menu.config(bg=main_color, fg=text_color)
-	edit_menu.config(bg=main_color, fg=text_color)
-	color_menu.config(bg=main_color, fg=text_color)
-	options_menu.config(bg=main_color, fg=text_color)
-
-
-
 
 
 # Create a toolbar frame
@@ -332,8 +285,7 @@ color_menu.add_command(label="Background", command=bg_color)
 # Add Options Menu
 options_menu = Menu(my_menu, tearoff=False)
 my_menu.add_cascade(label="Options", menu=options_menu)
-options_menu.add_command(label="Night Mode On", command=night_on)
-options_menu.add_command(label="Night Mode Off", command=night_off)
+
 
 
 # Add Status Bar To Bottom Of App
