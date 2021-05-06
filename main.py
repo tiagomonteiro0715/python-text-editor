@@ -17,7 +17,6 @@ open_status_name = False
 global selected
 selected = False
 
-# Create New File Function
 def new_file():
 	# Delete previous text
 	my_text.delete("1.0", END)
@@ -28,7 +27,6 @@ def new_file():
 	global open_status_name
 	open_status_name = False
 
-# Open Files
 def open_file():
 	# Delete previous text
 	my_text.delete("1.0", END)
@@ -56,7 +54,6 @@ def open_file():
 	# Close the opened file
 	text_file.close()
 
-# Save As File
 def save_as_file():
 	text_file = filedialog.asksaveasfilename(defaultextension=".*", initialdir="C:/gui/", title="Save File", filetypes=(("Text Files", "*.txt"), ("HTML Files", "*.html"), ("Python Files", "*.py"), ("All Files", "*.*")))
 	if text_file:
@@ -72,7 +69,6 @@ def save_as_file():
 		# Close the file
 		text_file.close()
 
-# Save File
 def save_file():
 	global open_status_name
 	if open_status_name:
@@ -89,7 +85,6 @@ def save_file():
 	else:
 		save_as_file()
 
-# Cut Text
 def cut_text(e):
 	global selected
 	# Check to see if keyboard shortcut used
@@ -105,7 +100,6 @@ def cut_text(e):
 			root.clipboard_clear()
 			root.clipboard_append(selected)
 
-# Copy Text
 def copy_text(e):
 	global selected
 	# check to see if we used keyboard shortcuts
@@ -119,7 +113,6 @@ def copy_text(e):
 		root.clipboard_clear()
 		root.clipboard_append(selected)
 
-# Paste Text
 def paste_text(e):
 	global selected
 	#Check to see if keyboard shortcut used
@@ -130,7 +123,6 @@ def paste_text(e):
 			position = my_text.index(INSERT)
 			my_text.insert(position, selected)
 
-# Bold Text
 def bold_it():
 	# Create our font
 	bold_font = font.Font(my_text, my_text.cget("font"))
@@ -148,7 +140,6 @@ def bold_it():
 	else:
 		my_text.tag_add("bold", "sel.first", "sel.last")
 
-# Italics Text
 def italics_it():
 	# Create our font
 	italics_font = font.Font(my_text, my_text.cget("font"))
